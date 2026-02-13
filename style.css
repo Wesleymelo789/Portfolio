@@ -1,0 +1,35 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: black;
+    height: 50px;
+} 
+h1 {
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+.imagemcarafeio{
+    height: 50px;
+
+}
+.menu1{
+    color: aqua;
+    display: flex;
+    list-style-type: none;
+    gap: 20px;
+    justify-content: center;
+}
+.botaoquedesce{
+    background-color: rgba(0, 250, 0, 0.893);
+    color: white;
+    text-decoration: none;
+    padding: 5px;
+    border-radius: 5px;
+}
