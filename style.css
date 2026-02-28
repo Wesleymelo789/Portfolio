@@ -2,38 +2,84 @@ body {
     margin: 0;
     padding: 0;
     font-family: "Permanent Marker", cursive;
-    background-color: #f3e3fa;
+    background-image: url('Fundo.jpg'); 
+        background-size: cover; 
+        background-position: center; 
+        background-repeat: no-repeat; 
+    background-attachment: fixed; 
 }
 .navbar {
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
-    background-color: rgb(174, 175, 255);
-    height: 50px;
-} 
-h1 {
-    color: black;
+    justify-content: space-between; 
+    padding: 0 50px; 
+    height: 70px; 
+    
+    background-color: rgba(0, 0, 0, 0.6); 
+    backdrop-filter: blur(10px); 
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); 
+    
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
+    z-index: 1000; /* Garante que a barra fique por cima de todo o resto */
+}
+.h1 {
     margin: 0;
     padding: 0;
 }
 
-.imagemcarafeio{
-    height: 45px;
+.imagemcarafeio {
+    height: 50px;
+    border-radius: 50%; /* Deixa a imagem redonda */
+    margin-left: 10px; /* Aproxima a imagem do seu nome */
 }
-.menu1{
-    color: white;
+
+.menu1 {
     display: flex;
     list-style-type: none;
-    gap: 20px;
-    justify-content: center;
+    gap: 35px; 
+    margin: 0;
+    padding: 0;
+    color: #e0e0e0; 
+    font-family: "Segoe UI", sans-serif; 
+    text-transform: uppercase; 
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
 }
-.botaoquedesce{
-    background-color: rgba(0, 0, 0, 0.893);
+
+.menu1 li {
+    cursor: pointer;
+    transition: color 0.3s ease; 
+}
+.menu1 li:hover {
+    color: rgb(79, 137, 170); 
+}
+
+.botaoquedesce {
+    background-color: transparent;
     color: white;
     text-decoration: none;
-    padding: 5px;
-    border-radius: 5px;
+    padding: 10px 24px;
+    border: 2px solid rgb(79, 137, 170); 
+    border-radius: 30px; 
+    font-family: "Segoe UI", sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 13px;
+    transition: all 0.3s ease; 
 }
+
+.botaoquedesce:hover {
+    background-color: rgb(79, 137, 170);
+    color: white;
+    box-shadow: 0 4px 15px rgba(79, 137, 170, 0.4); 
+    transform: translateY(-2px); 
+}
+
 .hero-imagem-container {
     position: relative; 
     display: flex;
@@ -146,7 +192,10 @@ h1 {
   font-style: normal;
 }
 .textotopo {
-    font-size: 24px;
+    color: white;
+    font-size: 26px;
+    margin: 0;
+    letter-spacing: 1px;
 }
 .container {
     display: flex;
@@ -192,7 +241,7 @@ h1 {
     font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     width: 100%;
     box-sizing: border-box;
-    padding: 25px; /* Mais respiro dentro do card */
+    padding: 25px; 
 }
 
 .cursos img {
@@ -201,19 +250,17 @@ h1 {
     margin-bottom: 10px;
 }
 
-/* Faixa lateral para dar peso à Faculdade */
+
 .destaque-faculdade {
     border-left: 6px solid rgb(79, 137, 170); 
 }
 
-/* Cria duas colunas para os cursos menores */
 .cursos-container-grid {
     display: grid;
     grid-template-columns: 1fr 1fr; /* Divide em dois blocos iguais */
     gap: 20px;
 }
 
-/* Estilização dos textos internos dos cards */
 .data-periodo {
     font-size: 14px;
     color: #888;
@@ -283,26 +330,29 @@ h1 {
 .btn-certificado:hover {
     background-color: #3b6b88; 
 }
-@media (max-width: 932px) {
-    body {
+@media (max-width: 932px) { 
+    
+    body { 
         overflow-x: hidden; 
     }
 
-    /* 1. AJUSTE DO HOVER PARA MOBILE */
-    /* Substituímos hover por active e reduzimos o scale para não quebrar a tela */
     .foto-principal:active {
         transform: scale(1.05); 
         box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); 
         border-left-color: #2b5c7a; 
     }
 
-    /* 2. NAVBAR E MENU */
     .navbar {
-        flex-direction: column;
+        flex-direction: column; 
+        justify-content: center;
         height: auto;
-        padding: 20px 15px; /* Ajuste no padding lateral */
-        gap: 12px; /* Aumentado para evitar cliques errados */
-        font-size: 18px; /* Reduzido levemente */
+        padding: 12px 10px; 
+        gap: 12px; 
+    }
+
+    .textotopo {
+        font-size: 20px; 
+        text-align: center;
     }
 
     .imagemcarafeio,
@@ -311,40 +361,49 @@ h1 {
     }
 
     .menu1 {
-        flex-wrap: wrap;
-        gap: 20px; /* Aumentado o espaço entre links */
+        flex-wrap: wrap; 
+        gap: 15px; 
         justify-content: center;
         width: 100%;
+        font-size: 11px; 
+    }
+    .botaoquedesce {
+        padding: 6px 16px; 
+        font-size: 11px;
     }
 
-    /* 3. TIPOGRAFIA RESPONSIVA */
+    .apresentacao {
+        margin-top: 150px; 
+        gap: 30px;
+    }
+
     .saudacao { font-size: 18px; margin-bottom: 5px; }
-    .nome { font-size: 30px; margin: 0; } /* Destacado, mas sem quebrar a linha à toa */
+    .nome { font-size: 30px; margin: 0; } 
     .profissao { font-size: 18px; margin-top: 5px; }
     .descricao { 
-        font-size: 16px; /* Tamanho REAL ideal para leitura em telas pequenas */
+        font-size: 16px; 
         line-height: 1.5; 
     }
     
     .container {
         flex-direction: column-reverse; 
         text-align: center;
-        gap: 30px; /* Um pouco mais de respiro entre foto e texto */
+        gap: 30px; 
         padding: 20px 0;
     }
 
     .textolado {
-        max-width: 100%; /* No mobile, deixe ocupar a tela toda com padding */
+        max-width: 100%; 
         padding: 0 20px;
     }
 
     .hero-imagem-container {
         width: 100%;
         max-width: 300px; 
-        height: 300px; /* A altura fixa garante que o espaço da foto exista */
+        height: 300px; 
         margin: 10px auto;
         position: relative; 
-        display: flex; /* Ajuda a centralizar a foto se ela for position relative/static */
+        display: flex; 
         justify-content: center;
         align-items: center;
     }
@@ -353,19 +412,18 @@ h1 {
         width: 300px;  
         height: 300px;
         border-width: 4px;
-        object-fit: cover; /* Garante que a foto não achate */
+        object-fit: cover; 
     }
 
     .borda-concentrica-container {
         width: 200px;
         height: 200px;
         position: relative;
-        }
+    }
 
-    /* 5. ÍCONES */
     .icone-caixa {
         padding: 8px; 
-        border-radius: 10px; /* Borda mais suave no mobile */
+        border-radius: 10px; 
     }
     
     .icone-caixa img {
@@ -382,7 +440,6 @@ h1 {
         top: 80%; 
     }
 
-    /* 6. CARDS DE CURSOS E EXPERIÊNCIA */
     .cursos-container-grid {
         grid-template-columns: 1fr;
         gap: 12px;
@@ -390,32 +447,28 @@ h1 {
     }
 
     .cursos.icone-caixa {
-        padding: 12px 15px; /* Respiro interno do card */
+        padding: 12px 15px; 
     }
 
     .cursos-experiencias {
         padding: 12px 15px;
     }
 
-    .apresentacao {
-        gap: 30px;
-        margin-top: 20px;
-    }
     .anel-interno,
     .anel-intermediario,
     .anel-externo { 
         display: none; 
     }
-    /* O SEGREDO: Diminuir a fonte dos textos dentro da caixa para ela não esticar a altura */
+    
     .cursos-experiencias h3 {
-        font-size: 16px; /* Título menor e mais proporcional */
-        margin-bottom: 4px; /* Menos espaço entre o título e o texto */
+        font-size: 16px; 
+        margin-bottom: 4px; 
     }
 
     .cursos-experiencias p, 
     .cursos-experiencias span {
-        font-size: 14px; /* Texto descritivo menor, ideal para celular */
-        line-height: 1.4; /* Deixa as linhas de texto um pouquinho mais juntas */
+        font-size: 14px; 
+        line-height: 1.4; 
         margin: 0;
     }
 }
