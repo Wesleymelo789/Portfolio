@@ -2,12 +2,13 @@ body {
     margin: 0;
     padding: 0;
     font-family: "Permanent Marker", cursive;
+    background-color: #f3e3fa;
 }
 .navbar {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    background-color: rgb(79, 137, 170);
+    background-color: rgb(174, 175, 255);
     height: 50px;
 } 
 h1 {
@@ -18,7 +19,6 @@ h1 {
 
 .imagemcarafeio{
     height: 45px;
-
 }
 .menu1{
     color: white;
@@ -46,28 +46,71 @@ h1 {
 
 .circulo-fundo {
     position: absolute;
-    width: 300px;  
-    height: 300px;
-    background-color: #00c3ff; 
-    border-radius: 50%;
+    width: 280px;  
+    height: 280px;
+    background-color: white; 
+    border-radius: 40%;
     z-index: 0; 
 }
 
+
 .foto-principal {
     position: relative; 
-    width: 180px;  
-    height: 250px;
-    border-radius: 50%;
+    width: 280px;       
+    height: 280px;       
+    border-radius: 50%;  
     object-fit: cover;
-    z-index: 1; 
-    box-shadow: 0 10px 20px rgba(0,0,0,0.15); 
+    object-position: center 50%; 
+    z-index: 10;    
 }
+
+.borda-concentrica-container {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 250px; 
+    height: 250px;
+    z-index: 1;
+}
+
+.anel {
+    position: absolute;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: transparent;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.anel-interno {
+    width: 290px;
+    height: 290px;
+    z-index: 3;
+    border: 3px solid rgba(5, 0, 0, 0.8);
+}
+
+.anel-intermediario {
+    width: 330px;
+    height: 330px;
+    z-index: 2;
+    border: 2px solid rgba(0, 0, 0, 0.5);
+}
+
+.anel-externo {
+    width: 370px;
+    height: 370px;
+    z-index: 1;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
 .icone-flutuante {
     position: absolute;
-    z-index: 2;
+    z-index: 20; 
 }
 .icone-caixa {
-    background-color: #00c3ff;
+    background-color: #ffffff;
     padding: 12px;
     border-radius: 18px; 
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
@@ -77,12 +120,12 @@ h1 {
     transition: transform 0.3s;
 }
 .esquerdo {
-    left: 6%; 
-    top: 10%;
+    left: -13%; 
+    top: 35%;
 }
 .direito {
-    right: 6%; 
-    top: 10%;
+    right: -13%; 
+    top: 35%;
 }
 .apresentacao {
     display: flex;
@@ -90,7 +133,7 @@ h1 {
     align-items: center; 
     justify-content: center; 
     gap: 80px; 
-    margin-top: 60px; /
+    margin-top: 60px; 
 }
 
 .textolado {
@@ -110,12 +153,118 @@ h1 {
     align-items: center;
     gap: 50px; 
 }
-.cursos img {
-    width: 70px;
-    border-radius: 18px; 
-}
+
+
+/* ========================================= */
+/* NOVAS CLASSES DO CURRÍCULO          */
+/* ========================================= */
+
 .cursos-experiencias {
-    display:flex;
-    gap: 20px;
+    display: flex;
     flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    max-width: 800px; /* Limita a largura para ficar centralizado e elegante */
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Títulos das áreas (Formação, Experiência...) */
+.titulo-secao {
+    font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
+    font-size: 26px;
+    color: #222;
+    margin-top: 40px;
+    margin-bottom: 10px;
+    border-bottom: 3px solid rgb(79, 137, 170); /* Sublinhado azul combinando com o menu */
+    padding-bottom: 5px;
+    text-transform: uppercase;
+}
+
+/* Ajuste nos cards para alinhamento à esquerda */
+.cursos.icone-caixa {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    gap: 8px;
+    font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 25px; /* Mais respiro dentro do card */
+}
+
+.cursos img {
+    width: 45px; 
+    border-radius: 8px; 
+    margin-bottom: 10px;
+}
+
+/* Faixa lateral para dar peso à Faculdade */
+.destaque-faculdade {
+    border-left: 6px solid rgb(79, 137, 170); 
+}
+
+/* Cria duas colunas para os cursos menores */
+.cursos-container-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Divide em dois blocos iguais */
+    gap: 20px;
+}
+
+/* Estilização dos textos internos dos cards */
+.data-periodo {
+    font-size: 14px;
+    color: #888;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.titulo-curso {
+    font-size: 20px;
+    color: #111;
+    margin: 0;
+}
+
+.instituicao {
+    font-size: 16px;
+    color: #555;
+    margin: 0;
+}
+
+.descricao-vaga {
+    font-size: 15px;
+    color: #444;
+    line-height: 1.6;
+    margin-top: 10px;
+}
+
+/* Botão de Ver Certificado */
+.btn-certificado {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 8px 18px;
+    background-color: rgb(79, 137, 170);
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn-certificado:hover {
+    background-color: #3b6b88; /* Escurece um pouco ao passar o mouse */
+}
+
+/* Garante que a grid de cursos vire 1 coluna no celular */
+@media (max-width: 768px) {
+    .cursos-container-grid {
+        grid-template-columns: 1fr; 
+    }
+    .container {
+        flex-direction: column; /* Coloca sua foto embaixo do texto no mobile */
+        text-align: center;
+    }
 }
