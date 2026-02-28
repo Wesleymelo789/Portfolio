@@ -240,7 +240,6 @@ h1 {
     margin-top: 10px;
 }
 
-/* Botão de Ver Certificado */
 .btn-certificado {
     display: inline-block;
     margin-top: 12px;
@@ -254,15 +253,40 @@ h1 {
     transition: background-color 0.3s ease;
 }
 
+.cursos.icone-caixa {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative; /* Necessário para o z-index funcionar */
+    z-index: 1;
+}
+
+.foto-principal:hover {
+     transform: scale(1.05); 
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2); 
+    border-left-color: #2b5c7a; 
+}
+
+.direito:hover, .esquerdo:hover {
+    transform: scale(1.1); 
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+.esquerdo:hover {
+    transform: scale(1.1); 
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}   
+
+.cursos.icone-caixa:hover {
+    transform: scale(1.05); 
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2); 
+    border-left-color: #2b5c7a; 
+}
+
 .btn-certificado:hover {
-    background-color: #3b6b88; /* Escurece um pouco ao passar o mouse */
+    background-color: #3b6b88; 
 }
 @media (max-width: 768px) {
     body {
-        overflow-x: hidden; /* Evita a barra de rolagem horizontal */
+        overflow-x: hidden; 
     }
-
-    /* 1. AJUSTE DO MENU */
     .navbar {
         flex-direction: column;
         height: auto;
@@ -276,12 +300,11 @@ h1 {
         justify-content: center;
     }
 
-    /* 2. MELHORANDO O TAMANHO DAS FONTES NO CELULAR */
     .saudacao { font-size: 24px; margin-bottom: 5px; }
     .nome { font-size: 38px; margin: 0; } /* Nome bem destacado */
     .profissao { font-size: 22px; margin-top: 5px; }
     .descricao { 
-        font-size: 16px; /* Tamanho ideal para leitura em telas pequenas */
+        font-size: 23px; /* Tamanho ideal para leitura em telas pequenas */
         line-height: 1.6; 
     }
     
@@ -316,9 +339,9 @@ h1 {
     }
 
     /* Anéis redimensionados para não estourar a tela do celular */
-    .anel-interno { width: 230px; height: 230px; }
-    .anel-intermediario { width: 260px; height: 260px; }
-    .anel-externo { width: 290px; height: 290px; }
+    .anel-interno { width: 0; height: 0; display: none; }
+    .anel-intermediario { width: 0; height: 0; display: none; }
+    .anel-externo { width: 0; height: 0; display: none; }
 
     /* 4. ÍCONES MAIS ELEGANTES E BEM POSICIONADOS */
     .icone-caixa {
