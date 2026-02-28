@@ -257,14 +257,104 @@ h1 {
 .btn-certificado:hover {
     background-color: #3b6b88; /* Escurece um pouco ao passar o mouse */
 }
-
-/* Garante que a grid de cursos vire 1 coluna no celular */
 @media (max-width: 768px) {
-    .cursos-container-grid {
-        grid-template-columns: 1fr; 
+    body {
+        overflow-x: hidden; /* Evita a barra de rolagem horizontal */
     }
+
+    /* 1. AJUSTE DO MENU */
+    .navbar {
+        flex-direction: column;
+        height: auto;
+        padding: 15px;
+        gap: 15px;
+    }
+    
+    .menu1 {
+        flex-wrap: wrap;
+        gap: 15px;
+        justify-content: center;
+    }
+
+    /* 2. MELHORANDO O TAMANHO DAS FONTES NO CELULAR */
+    .saudacao { font-size: 24px; margin-bottom: 5px; }
+    .nome { font-size: 38px; margin: 0; } /* Nome bem destacado */
+    .profissao { font-size: 22px; margin-top: 5px; }
+    .descricao { 
+        font-size: 16px; /* Tamanho ideal para leitura em telas pequenas */
+        line-height: 1.6; 
+    }
+    
     .container {
-        flex-direction: column; /* Coloca sua foto embaixo do texto no mobile */
+        flex-direction: column-reverse; /* Foto em cima, texto embaixo */
         text-align: center;
+        gap: 20px;
+    }
+
+    .textolado {
+        max-width: 95%;
+        padding: 0 15px;
+    }
+
+    /* 3. AJUSTE EXATO DA FOTO E ANÉIS (SEM USAR SCALE) */
+    .hero-imagem-container {
+        width: 100%;
+        max-width: 300px;
+        height: 300px;
+        margin-top: 10px;
+    }
+
+    .foto-principal {
+        width: 200px;  /* Foto um pouco menor para caber na tela */
+        height: 200px;
+        border-width: 4px;
+    }
+
+    .borda-concentrica-container {
+        width: 200px;
+        height: 200px;
+    }
+
+    /* Anéis redimensionados para não estourar a tela do celular */
+    .anel-interno { width: 230px; height: 230px; }
+    .anel-intermediario { width: 260px; height: 260px; }
+    .anel-externo { width: 290px; height: 290px; }
+
+    /* 4. ÍCONES MAIS ELEGANTES E BEM POSICIONADOS */
+    .icone-caixa {
+        padding: 8px; /* Caixa do ícone um pouco menor */
+        border-radius: 12px;
+    }
+    
+    .icone-caixa img {
+        width: 30px; /* Ícone mais delicado */
+    }
+
+    /* Desce os ícones para a base da foto, parecendo "selos" ou "badges" */
+    .esquerdo {
+        left: 5%; 
+        top: 70%; 
+    }
+    .direito {
+        right: 5%; 
+        top: 70%; 
+    }
+
+    /* 5. AJUSTES DOS CARDS DE CURSOS E EXPERIÊNCIA */
+    .cursos-container-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cursos.icone-caixa {
+        padding: 15px; /* Menos espaço sobrando dentro do card no mobile */
+    }
+
+    .cursos-experiencias {
+        padding: 10px;
+    }
+
+    .apresentacao {
+        gap: 40px;
+        margin-top: 20px;
     }
 }
