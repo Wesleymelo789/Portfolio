@@ -283,103 +283,139 @@ h1 {
 .btn-certificado:hover {
     background-color: #3b6b88; 
 }
-@media (max-width: 768px) {
+@media (max-width: 932px) {
     body {
         overflow-x: hidden; 
     }
+
+    /* 1. AJUSTE DO HOVER PARA MOBILE */
+    /* Substituímos hover por active e reduzimos o scale para não quebrar a tela */
+    .foto-principal:active {
+        transform: scale(1.05); 
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); 
+        border-left-color: #2b5c7a; 
+    }
+
+    /* 2. NAVBAR E MENU */
     .navbar {
         flex-direction: column;
         height: auto;
-        padding: 15px;
-        gap: 15px;
-        font-size: 38px;
+        padding: 20px 15px; /* Ajuste no padding lateral */
+        gap: 12px; /* Aumentado para evitar cliques errados */
+        font-size: 18px; /* Reduzido levemente */
     }
+
+    .imagemcarafeio,
     .circulo-fundo {
         display: none; 
     }
+
     .menu1 {
         flex-wrap: wrap;
-        gap: 15px;
+        gap: 20px; /* Aumentado o espaço entre links */
         justify-content: center;
+        width: 100%;
     }
 
-    .saudacao { font-size: 24px; margin-bottom: 5px; }
-    .nome { font-size: 38px; margin: 0; } /* Nome bem destacado */
-    .profissao { font-size: 22px; margin-top: 5px; }
+    /* 3. TIPOGRAFIA RESPONSIVA */
+    .saudacao { font-size: 18px; margin-bottom: 5px; }
+    .nome { font-size: 30px; margin: 0; } /* Destacado, mas sem quebrar a linha à toa */
+    .profissao { font-size: 18px; margin-top: 5px; }
     .descricao { 
-        font-size: 23px; /* Tamanho ideal para leitura em telas pequenas */
-        line-height: 1.6; 
+        font-size: 16px; /* Tamanho REAL ideal para leitura em telas pequenas */
+        line-height: 1.5; 
     }
     
     .container {
-        flex-direction: column-reverse; /* Foto em cima, texto embaixo */
+        flex-direction: column-reverse; 
         text-align: center;
-        gap: 20px;
+        gap: 30px; /* Um pouco mais de respiro entre foto e texto */
+        padding: 20px 0;
     }
 
     .textolado {
-        max-width: 95%;
-        padding: 0 15px;
+        max-width: 100%; /* No mobile, deixe ocupar a tela toda com padding */
+        padding: 0 20px;
     }
 
-    /* 3. AJUSTE EXATO DA FOTO E ANÉIS (SEM USAR SCALE) */
     .hero-imagem-container {
         width: 100%;
-        max-width: 300px;
-        height: 300px;
-        margin-top: 10px;
+        max-width: 300px; 
+        height: 300px; /* A altura fixa garante que o espaço da foto exista */
+        margin: 10px auto;
+        position: relative; 
+        display: flex; /* Ajuda a centralizar a foto se ela for position relative/static */
+        justify-content: center;
+        align-items: center;
     }
 
     .foto-principal {
-        width: 200px;  /* Foto um pouco menor para caber na tela */
-        height: 200px;
+        width: 300px;  
+        height: 300px;
         border-width: 4px;
+        object-fit: cover; /* Garante que a foto não achate */
     }
 
     .borda-concentrica-container {
         width: 200px;
         height: 200px;
-    }
+        position: relative;
+        }
 
-    .anel-interno { width: 0; height: 0; display: none; }
-    .anel-intermediario { width: 0; height: 0; display: none; }
-    .anel-externo { width: 0; height: 0; display: none; }
-
-    /* 4. ÍCONES MAIS ELEGANTES E BEM POSICIONADOS */
+    /* 5. ÍCONES */
     .icone-caixa {
-        padding: 8px; /* Caixa do ícone um pouco menor */
-        border-radius: 12px;
+        padding: 8px; 
+        border-radius: 10px; /* Borda mais suave no mobile */
     }
     
     .icone-caixa img {
-        width: 30px; /* Ícone mais delicado */
+        width: 30px; 
     }
 
-    /* Desce os ícones para a base da foto, parecendo "selos" ou "badges" */
     .esquerdo {
-        left: 5%; 
-        top: 70%; 
+        left: 0%; 
+        top: 80%; 
     }
+    
     .direito {
-        right: 5%; 
-        top: 70%; 
+        right: 0%; 
+        top: 80%; 
     }
 
-    /* 5. AJUSTES DOS CARDS DE CURSOS E EXPERIÊNCIA */
+    /* 6. CARDS DE CURSOS E EXPERIÊNCIA */
     .cursos-container-grid {
         grid-template-columns: 1fr;
+        gap: 12px;
+        padding: 0 15px;
     }
 
     .cursos.icone-caixa {
-        padding: 15px; /* Menos espaço sobrando dentro do card no mobile */
+        padding: 12px 15px; /* Respiro interno do card */
     }
 
     .cursos-experiencias {
-        padding: 10px;
+        padding: 12px 15px;
     }
 
     .apresentacao {
-        gap: 40px;
+        gap: 30px;
         margin-top: 20px;
+    }
+    .anel-interno,
+    .anel-intermediario,
+    .anel-externo { 
+        display: none; 
+    }
+    /* O SEGREDO: Diminuir a fonte dos textos dentro da caixa para ela não esticar a altura */
+    .cursos-experiencias h3 {
+        font-size: 16px; /* Título menor e mais proporcional */
+        margin-bottom: 4px; /* Menos espaço entre o título e o texto */
+    }
+
+    .cursos-experiencias p, 
+    .cursos-experiencias span {
+        font-size: 14px; /* Texto descritivo menor, ideal para celular */
+        line-height: 1.4; /* Deixa as linhas de texto um pouquinho mais juntas */
+        margin: 0;
     }
 }
