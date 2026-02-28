@@ -292,8 +292,11 @@ h1 {
         height: auto;
         padding: 15px;
         gap: 15px;
+        font-size: 38px;
     }
-    
+    .circulo-fundo {
+        display: none; 
+    }
     .menu1 {
         flex-wrap: wrap;
         gap: 15px;
@@ -338,7 +341,6 @@ h1 {
         height: 200px;
     }
 
-    /* Anéis redimensionados para não estourar a tela do celular */
     .anel-interno { width: 0; height: 0; display: none; }
     .anel-intermediario { width: 0; height: 0; display: none; }
     .anel-externo { width: 0; height: 0; display: none; }
