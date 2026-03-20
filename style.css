@@ -5,7 +5,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: "Permanent Marker", cursive;
-    background-image: url('Fundo.jpg'); 
+    background-image: url('fundo.jpg'); 
         background-size: cover; 
         background-position: center; 
         background-repeat: no-repeat; 
@@ -473,4 +473,70 @@ body {
         line-height: 1.4; 
         margin: 0;
     }
+}
+.formulario {
+    width: 800px; 
+    max-width: 800px; 
+    margin: 50px auto;
+    padding: 40px; 
+    background-color: #ffffff;
+    border-radius: 18px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-sizing: border-box; 
+}
+
+.formulario form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    font-family: "Segoe UI", sans-serif;
+}
+
+.formulario label {
+    font-weight: bold;
+    color: #444;
+    text-transform: capitalize;
+}
+
+.formulario input, 
+.formulario textarea {
+    width: 100%;
+    padding: 18px; 
+    font-size: 16px; 
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-family: "Segoe UI", sans-serif;
+    box-sizing: border-box; 
+    transition: border-color 0.3s ease;
+}
+
+.formulario textarea {
+    resize: vertical;
+    min-height: 180px; 
+}
+
+.formulario input:focus, 
+.formulario textarea:focus {
+    outline: none;
+    border-color: rgb(79, 137, 170);
+    box-shadow: 0 0 5px rgba(79, 137, 170, 0.3);
+}
+
+.formulario button {
+    background-color: rgb(79, 137, 170);
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.formulario button:hover {
+    background-color: #3b6b88;
+    box-shadow: 0 4px 15px rgba(79, 137, 170, 0.4);
+    transform: translateY(-2px);
 }
