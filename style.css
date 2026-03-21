@@ -1,14 +1,15 @@
 html {
     scroll-behavior: smooth;
 }
+
 body {
     margin: 0;
     padding: 0;
     font-family: "Permanent Marker", cursive;
     background-image: url('fundo.jpg'); 
-        background-size: cover; 
-        background-position: center; 
-        background-repeat: no-repeat; 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
     background-attachment: fixed; 
 }
 
@@ -29,12 +30,13 @@ body {
     box-sizing: border-box;
     z-index: 1000; 
 }
-.navbar li a{
+
+.navbar li a {
     text-decoration: none;  
     color: #ffffff; 
 }
 
-.navbar li a:hover{
+.navbar li a:hover {
     color: rgb(79, 137, 170);
 }
 
@@ -108,7 +110,6 @@ body {
     z-index: 0; 
 }
 
-
 .foto-principal {
     position: relative; 
     width: 280px;       
@@ -117,6 +118,7 @@ body {
     object-fit: cover;
     object-position: center 50%; 
     z-index: 10;    
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .borda-concentrica-container {
@@ -139,31 +141,15 @@ body {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 }
 
-.anel-interno {
-    width: 290px;
-    height: 290px;
-    z-index: 3;
-    border: 3px solid rgba(5, 0, 0, 0.8);
-}
-
-.anel-intermediario {
-    width: 330px;
-    height: 330px;
-    z-index: 2;
-    border: 2px solid rgba(0, 0, 0, 0.5);
-}
-
-.anel-externo {
-    width: 370px;
-    height: 370px;
-    z-index: 1;
-    border: 1px solid rgba(0, 0, 0, 0.3);
-}
+.anel-interno { width: 290px; height: 290px; z-index: 3; border: 3px solid rgba(5, 0, 0, 0.8); }
+.anel-intermediario { width: 330px; height: 330px; z-index: 2; border: 2px solid rgba(0, 0, 0, 0.5); }
+.anel-externo { width: 370px; height: 370px; z-index: 1; border: 1px solid rgba(0, 0, 0, 0.3); }
 
 .icone-flutuante {
     position: absolute;
     z-index: 20; 
 }
+
 .icone-caixa {
     background-color: #ffffff;
     padding: 12px;
@@ -174,14 +160,10 @@ body {
     align-items: center;
     transition: transform 0.3s;
 }
-.esquerdo {
-    left: -13%; 
-    top: 35%;
-}
-.direito {
-    right: -13%; 
-    top: 35%;
-}
+
+.esquerdo { left: -13%; top: 35%; }
+.direito { right: -13%; top: 35%; }
+
 .apresentacao {
     display: flex;
     flex-direction: column;
@@ -189,6 +171,7 @@ body {
     justify-content: center; 
     gap: 80px; 
     margin-top: 60px; 
+    padding: 0 20px; /* Adicionado para evitar que grude nas bordas em telas médias */
 }
 
 .textolado {
@@ -200,15 +183,19 @@ body {
   font-weight: 400;
   font-style: normal;
 }
+
 .textotopo {
     color: white;
     font-size: 26px;
     margin: 0;
     letter-spacing: 1px;
 }
+
 .container {
     display: flex;
     align-items: center;
+    justify-content: center;
+    flex-wrap: wrap; /* Ajuda a quebrar em telas menores que não caem no media query */
     gap: 50px; 
 }
 
@@ -217,7 +204,7 @@ body {
     flex-direction: column;
     gap: 20px;
     width: 100%;
-    max-width: 800px; /* Limita a largura para ficar centralizado e elegante */
+    max-width: 800px; 
     margin: 0 auto;
     padding: 20px;
     box-sizing: border-box;
@@ -229,7 +216,7 @@ body {
     color: #222;
     margin-top: 40px;
     margin-bottom: 10px;
-    border-bottom: 3px solid rgb(79, 137, 170); /* Sublinhado azul combinando com o menu */
+    border-bottom: 3px solid rgb(79, 137, 170); 
     padding-bottom: 5px;
     text-transform: uppercase;
 }
@@ -244,6 +231,9 @@ body {
     width: 100%;
     box-sizing: border-box;
     padding: 25px; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative; 
+    z-index: 1;
 }
 
 .cursos img {
@@ -252,42 +242,18 @@ body {
     margin-bottom: 10px;
 }
 
-
-.destaque-faculdade {
-    border-left: 6px solid rgb(79, 137, 170); 
-}
+.destaque-faculdade { border-left: 6px solid rgb(79, 137, 170); }
 
 .cursos-container-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr; 
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsividade automática sem media query */
     gap: 20px;
 }
 
-.data-periodo {
-    font-size: 14px;
-    color: #888;
-    font-weight: bold;
-    text-transform: uppercase;
-}
-
-.titulo-curso {
-    font-size: 20px;
-    color: #111;
-    margin: 0;
-}
-
-.instituicao {
-    font-size: 16px;
-    color: #555;
-    margin: 0;
-}
-
-.descricao-vaga {
-    font-size: 15px;
-    color: #444;
-    line-height: 1.6;
-    margin-top: 10px;
-}
+.data-periodo { font-size: 14px; color: #888; font-weight: bold; text-transform: uppercase; }
+.titulo-curso { font-size: 20px; color: #111; margin: 0; }
+.instituicao { font-size: 16px; color: #555; margin: 0; }
+.descricao-vaga { font-size: 15px; color: #444; line-height: 1.6; margin-top: 10px; }
 
 .btn-certificado {
     display: inline-block;
@@ -302,180 +268,16 @@ body {
     transition: background-color 0.3s ease;
 }
 
-.cursos.icone-caixa {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    position: relative; 
-    z-index: 1;
-}
+.foto-principal:hover { transform: scale(1.05); box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2); }
+.direito:hover, .esquerdo:hover { transform: scale(1.1); box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15); }
+.cursos.icone-caixa:hover { transform: scale(1.05); box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2); border-left-color: #2b5c7a; }
+.btn-certificado:hover { background-color: #3b6b88; }
 
-.foto-principal:hover {
-     transform: scale(1.05); 
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2); 
-    border-left-color: #2b5c7a; 
-}
-
-.direito:hover, .esquerdo:hover {
-    transform: scale(1.1); 
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-}
-.esquerdo:hover {
-    transform: scale(1.1); 
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-}   
-
-.cursos.icone-caixa:hover {
-    transform: scale(1.05); 
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2); 
-    border-left-color: #2b5c7a; 
-}
-
-.btn-certificado:hover {
-    background-color: #3b6b88; 
-}
-@media (max-width: 932px) { 
-    
-    body { 
-        overflow-x: hidden; 
-    }
-
-    .foto-principal:active {
-        transform: scale(1.05); 
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); 
-        border-left-color: #2b5c7a; 
-    }
-
-    .navbar {
-        flex-direction: column; 
-        justify-content: center;
-        height: auto;
-        padding: 12px 10px; 
-        gap: 12px; 
-    }
-
-    .textotopo {
-        font-size: 20px; 
-        text-align: center;
-    }
-
-    .imagemcarafeio,
-    .circulo-fundo {
-        display: none; 
-    }
-
-    .menu1 {
-        flex-wrap: wrap; 
-        gap: 15px; 
-        justify-content: center;
-        width: 100%;
-        font-size: 11px; 
-    }
-    .botaoquedesce {
-        padding: 6px 16px; 
-        font-size: 11px;
-    }
-
-    .apresentacao {
-        margin-top: 150px; 
-        gap: 30px;
-    }
-
-    .saudacao { font-size: 18px; margin-bottom: 5px; }
-    .nome { font-size: 30px; margin: 0; } 
-    .profissao { font-size: 18px; margin-top: 5px; }
-    .descricao { 
-        font-size: 16px; 
-        line-height: 1.5; 
-    }
-    
-    .container {
-        flex-direction: column-reverse; 
-        text-align: center;
-        gap: 30px; 
-        padding: 20px 0;
-    }
-
-    .textolado {
-        max-width: 100%; 
-        padding: 0 20px;
-    }
-
-    .hero-imagem-container {
-        width: 100%;
-        max-width: 300px; 
-        height: 300px; 
-        margin: 10px auto;
-        position: relative; 
-        display: flex; 
-        justify-content: center;
-        align-items: center;
-    }
-
-    .foto-principal {
-        width: 300px;  
-        height: 300px;
-        border-width: 4px;
-        object-fit: cover; 
-    }
-
-    .borda-concentrica-container {
-        width: 200px;
-        height: 200px;
-        position: relative;
-    }
-
-    .icone-caixa {
-        padding: 8px; 
-        border-radius: 10px; 
-    }
-    
-    .icone-caixa img {
-        width: 30px; 
-    }
-
-    .esquerdo {
-        left: 0%; 
-        top: 80%; 
-    }
-    
-    .direito {
-        right: 0%; 
-        top: 80%; 
-    }
-
-    .cursos-container-grid {
-        grid-template-columns: 1fr;
-        gap: 12px;
-        padding: 0 15px;
-    }
-
-    .cursos.icone-caixa {
-        padding: 12px 15px; 
-    }
-
-    .cursos-experiencias {
-        padding: 12px 15px;
-    }
-
-    .anel-interno,
-    .anel-intermediario,
-    .anel-externo { 
-        display: none; 
-    }
-    
-    .cursos-experiencias h3 {
-        font-size: 16px; 
-        margin-bottom: 4px; 
-    }
-
-    .cursos-experiencias p, 
-    .cursos-experiencias span {
-        font-size: 14px; 
-        line-height: 1.4; 
-        margin: 0;
-    }
-}
+/* --------------------------------------------- */
+/* FORMULÁRIO                    */
+/* --------------------------------------------- */
 .formulario {
-    width: 800px; 
+    width: 90%; /* Alterado de fixo 800px para flexível */
     max-width: 800px; 
     margin: 50px auto;
     padding: 40px; 
@@ -492,11 +294,7 @@ body {
     font-family: "Segoe UI", sans-serif;
 }
 
-.formulario label {
-    font-weight: bold;
-    color: #444;
-    text-transform: capitalize;
-}
+.formulario label { font-weight: bold; color: #444; text-transform: capitalize; }
 
 .formulario input, 
 .formulario textarea {
@@ -510,17 +308,8 @@ body {
     transition: border-color 0.3s ease;
 }
 
-.formulario textarea {
-    resize: vertical;
-    min-height: 180px; 
-}
-
-.formulario input:focus, 
-.formulario textarea:focus {
-    outline: none;
-    border-color: rgb(79, 137, 170);
-    box-shadow: 0 0 5px rgba(79, 137, 170, 0.3);
-}
+.formulario textarea { resize: vertical; min-height: 180px; }
+.formulario input:focus, .formulario textarea:focus { outline: none; border-color: rgb(79, 137, 170); box-shadow: 0 0 5px rgba(79, 137, 170, 0.3); }
 
 .formulario button {
     background-color: rgb(79, 137, 170);
@@ -535,8 +324,98 @@ body {
     transition: all 0.3s ease;
 }
 
-.formulario button:hover {
-    background-color: #3b6b88;
-    box-shadow: 0 4px 15px rgba(79, 137, 170, 0.4);
-    transform: translateY(-2px);
+.formulario button:hover { background-color: #3b6b88; box-shadow: 0 4px 15px rgba(79, 137, 170, 0.4); transform: translateY(-2px); }
+
+/* --------------------------------------------- */
+/* MEDIA QUERIES                   */
+/* --------------------------------------------- */
+@media (max-width: 932px) { 
+    body { 
+        overflow-x: hidden; 
+    }
+
+    .navbar {
+        flex-direction: column; 
+        justify-content: center;
+        height: auto;
+        padding: 15px 10px; 
+        gap: 15px; 
+    }
+
+    .textotopo { font-size: 20px; text-align: center; }
+    .imagemcarafeio, .circulo-fundo { display: none; }
+
+    .menu1 {
+        flex-wrap: wrap; 
+        gap: 12px; 
+        justify-content: center;
+        width: 100%;
+        font-size: 12px; 
+    }
+
+    .botaoquedesce { padding: 8px 16px; font-size: 11px; }
+
+    .apresentacao {
+        margin-top: 180px; /* Mais espaço para não sobrepor a navbar aumentada */
+        gap: 30px;
+        padding: 0 15px;
+    }
+    
+    .container {
+        flex-direction: column-reverse; 
+        text-align: center;
+        gap: 30px; 
+        padding: 20px 0;
+    }
+
+    .textolado { max-width: 100%; padding: 0 10px; }
+
+    /* Ajuste responsivo real da imagem hero */
+    .hero-imagem-container {
+        width: 100%;
+        max-width: 300px; 
+        height: auto; 
+        aspect-ratio: 1/1; /* Mantém redondo sem usar px fixo */
+        margin: 10px auto;
+    }
+
+    .foto-principal {
+        width: 100%;  
+        height: 100%;
+        border-width: 4px;
+    }
+
+    .borda-concentrica-container {
+        width: 80%;
+        height: 80%;
+    }
+
+    .icone-caixa { padding: 8px; border-radius: 10px; }
+    .icone-caixa img { width: 30px; }
+    .esquerdo { left: -5%; top: 75%; }
+    .direito { right: -5%; top: 75%; }
+
+    /* Reduzindo formatação dos cursos no mobile */
+    .cursos-container-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        padding: 0; /* Removido padding extra que gerava rolagem */
+    }
+
+    .cursos-experiencias { padding: 15px; }
+    .cursos.icone-caixa { padding: 20px 15px; }
+
+    .anel-interno, .anel-intermediario, .anel-externo { display: none; }
+    
+    /* Ajustes do Formulário no Mobile */
+    .formulario {
+        padding: 25px 20px;
+        margin: 30px auto;
+        border-radius: 12px;
+    }
+    
+    .formulario input, .formulario textarea {
+        padding: 14px;
+        font-size: 15px;
+    }
 }
