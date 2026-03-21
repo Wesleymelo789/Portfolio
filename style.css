@@ -277,7 +277,7 @@ body {
 /* FORMULÁRIO                    */
 /* --------------------------------------------- */
 .formulario {
-    width: 90%; /* Alterado de fixo 800px para flexível */
+    width: 800px; 
     max-width: 800px; 
     margin: 50px auto;
     padding: 40px; 
@@ -409,6 +409,7 @@ body {
     
     /* Ajustes do Formulário no Mobile */
     .formulario {
+        width: 300px;
         padding: 25px 20px;
         margin: 30px auto;
         border-radius: 12px;
