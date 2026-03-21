@@ -420,3 +420,66 @@ body {
         font-size: 15px;
     }
 }
+/* --------------------------------------------- */
+/* RODAPÉ FINAL                                  */
+/* --------------------------------------------- */
+.rodape {
+    background-color: rgba(0, 0, 0, 0.75); 
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(255, 255, 255, 0.1); 
+    padding: 35px 20px;
+    margin-top: 80px; 
+    font-family: "Segoe UI", sans-serif;
+    color: #e0e0e0;
+    text-align: center;
+}
+
+.rodape-conteudo {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px; 
+    align-items: center;
+}
+
+.rodape-conteudo p {
+    margin: 0;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+}
+
+/* Novo: Container para colocar os links lado a lado */
+.rodape-redes {
+    display: flex;
+    gap: 30px; /* Distância entre o botão do LinkedIn e do GitHub */
+    justify-content: center;
+    flex-wrap: wrap; /* Se a tela for muito pequena, eles quebram linha em vez de espremer */
+}
+
+/* Estilo geral para os links das redes */
+.link-rede {
+    display: flex;
+    align-items: center;
+    gap: 8px; 
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.link-rede:hover {
+    color: rgb(79, 137, 170); 
+    transform: translateY(-3px); 
+}
+
+.link-rede svg {
+    transition: fill 0.3s ease;
+}
+
+.link-rede:hover svg {
+    fill: rgb(79, 137, 170);
+}
